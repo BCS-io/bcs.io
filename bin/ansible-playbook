@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+
+#
+# ansible provision server
+#
+
+tags=all
+limit=''
+
+print_usage() {
+  printf "Ansible wrapper\n\n"
+  printf "options are as follows:\n"
+  printf "Limiting of playbook hosts - optional:\n"
+  printf "  -a all\n"
+  printf "  -d development\n"
+  printf "  -p production\n"
+  printf "  -s staging\n\n"
+  printf ""
+  printf "  -t tag applied to the running playbook\n"
+  printf "     Example tags:\n"
+  printf "     dokku, database, import\n"
+  printf "Example: bin/ansible-playbook -t dokku  \n"
+}
+
+
+while getopts 'adht:p' flag; do
+  case "${flag}" in
+    a) limit='' ;;
+    d) limit='--limit noss.bcs.io' ;;
+    h) print_usage
+       exit 1 ;;
+    p) limit='--limit papa.bcs.io' ;;
+    t) tags=$OPTARG ;;
+    *) print_usage
+       exit 1;;
+  esac
+done
+
+if (( $OPTIND == 1 )); then
+  print_usage
+  exit 1
+fi
+
+ansible_path="./ansible/web"
+
+(cd $ansible_path && ansible-playbook site.yml --inventory hosts.ini  ${limit} --tags "${tags}")
