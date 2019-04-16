@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+
+#
+# clean
+# - cleans up references to server
+#   - currently only ssh-keygen
+#
+
+OPTIND=1
+
+print_usage() {
+  printf "Cleaning host key from known hosts\n\n"
+  printf "Options flags as follows:\n"
+  printf "  d - development\n"
+  printf "  p - production\n"
+  printf "\n"
+  printf "Example: clean -p \n"
+}
+
+if [ $# -eq 0 ]; then
+  print_usage
+  exit
+fi
+
+while getopts 'dhp' flag; do
+  case "${flag}" in
+    d) ssh-keygen -R noss.bcs.io
+       ssh-keygen -R noss
+       # return ip from hosts file
+       ip=$(dscacheutil -q host -a name noss.bcs.io  | grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b")
+       ssh-keygen -R $ip ;;
+    h) print_usage
+       exit 1 ;;
+    p) ssh-keygen -R papa.bcs.io
+       ssh-keygen -R papa
+       # return ip from hosts file
+       ip=$(dscacheutil -q host -a name papa.bcs.io  | grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b")
+       ssh-keygen -R $ip ;;
+    *) print_usage
+       exit 1;;
+  esac
+done
