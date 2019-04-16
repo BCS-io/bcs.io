@@ -3,3 +3,7 @@ ansible_python_interpreter: /usr/bin/python3
 
 # ssh key on the ansible master or controller machine
 controller_key: '~/.ssh/id_rsa.pub'
+
+# Dokku Specific
+application: bcs-io
+ops_email: ops@bcs.io
