@@ -1,0 +1,4 @@
+---
+domain: bcs.io
+rails_env: production
+rails_master_key:  '../../rails/config/credentials/production.key'
