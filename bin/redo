@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+
+__dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+echo "start"
+source ${__dir}/clean
+source ${__dir}/terraform apply -auto-approve
+source ${__dir}/ansible-playbook
+source ${__dir}/gp
+source ${__dir}/ansible-playbook
+echo "end"
