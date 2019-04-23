@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+
+#
+# hetzner-api
+#  - note 'id' are used by terraform
+# Example
+#  ssh_key identifiers (eg id, fingerprint) used in data reference
+#  snapshot image id used in resource server image attribute.
+#    - Hetzner snapshot web UI doesn't show the id - only the api
+#
+
+ENV_FILE=terraform/project/terraform.tfvars
+
+export $(grep -v '^#' $ENV_FILE | xargs)
+api=''
+
+print_usage() {
+  printf "Hetzer API query\n\n"
+  printf "Different option flags\n"
+  printf "  h - help you are reading now\n"
+  printf "  s - snapshot of images stored on Hetzner\n"
+  printf "  k - ssh_keys stored on Hetzner\n"
+  printf "\n"
+  printf "Example: hetzner-api -k\n"
+}
+
+if [ $# -eq 0 ]; then
+  print_usage
+  exit
+fi
+
+while getopts 'hks' flag; do
+  case "${flag}" in
+    h) print_usage
+       exit 1 ;;
+    k) api='https://api.hetzner.cloud/v1/ssh_keys' ;;
+    s) api='https://api.hetzner.cloud/v1/images?type=snapshot' ;;
+    *) print_usage
+    exit 1;;
+  esac
+done
+
+echo "Hetzner API request"
+
+curl -H "Authorization: Bearer ${hcloud_token}" ${api}
