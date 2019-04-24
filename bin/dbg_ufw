@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+ansible_path="./ansible/web"
+
+#
+# Query ufw on the webserver
+#
+
+print_usage() {
+  printf "Remote ufw status:\n"
+  printf "  d development server \n"
+  printf "  p production server\n\n"
+  printf "\nExample dbg_ufw -p\n"
+}
+
+while getopts 'dhp' flag; do
+  case "${flag}" in
+    d) (cd $ansible_path && ansible noss.bcs.io -a "ufw status" -i hosts.ini) ;;
+    h) print_usage
+       exit 1 ;;
+    p) (cd $ansible_path && ansible papa.bcs.io -a "ufw status" -i hosts.ini) ;;
+    *) print_usage
+       exit 1;;
+  esac
+done
+
+if (( $OPTIND == 1 )); then
+  print_usage
+fi
