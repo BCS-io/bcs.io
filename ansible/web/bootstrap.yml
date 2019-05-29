@@ -1,0 +1,10 @@
+---
+#
+# ansible-playbook bootstrap.yml --limit appservers -vvv
+#
+- hosts: all
+  gather_facts: no
+  vars_files:
+    - vars/secrets.yml
+  roles:
+    - bootstrap
