@@ -61,6 +61,9 @@ GEM
     bootsnap (1.4.5)
       msgpack (~> 1.0)
     builder (3.2.3)
+    bundler-audit (0.6.1)
+      bundler (>= 1.2.0, < 3)
+      thor (~> 0.18)
     byebug (11.0.1)
     concurrent-ruby (1.1.5)
     crass (1.0.5)
@@ -198,6 +201,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap (>= 1.4.2)
+  bundler-audit
   byebug
   factory_bot_rails
   jbuilder (~> 2.7)
