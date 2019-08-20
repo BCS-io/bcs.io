@@ -30,4 +30,5 @@
   tags:
     - dokku
 
+- import_tasks: rails.yml
 - import_tasks: ssl.yml

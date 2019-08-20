@@ -1,0 +1,48 @@
+---
+- import_role:
+    name: dokku_bot.ansible_dokku
+
+# Rails specific configuration
+#
+- name: config:set {{ application }} RAILS_ENV=production RAILS_MASTER_KEY=XXXX RAILS_SERVE_STATIC_FILES=true
+  dokku_config:
+    app: "{{ application }}"
+    config:
+      RAILS_ENV: production
+      RAILS_MASTER_KEY: "{{ lookup('file', rails_master_key )}}"
+
+      # While this is slower than using NGINX Proxy. Dokku doesn't offer that
+      # if you need faster static assets than use a CDN (which is faster than
+      # NGINX proxy anyway)
+      #
+      RAILS_SERVE_STATIC_FILES: "true"
+  tags:
+    - dokku
+    - master.key
+    - env
+
+- name: config:set {{ application }} banner mark
+  dokku_config:
+    app: "{{ application }}"
+    config:
+      RACK_DEV_MARK_ENV: "{{ rack_dev_mark_env }}"
+  # when: rack_dev_mark_env is defined
+  tags:
+    - dokku
+    - env
+
+- name: config {{ application }}
+  command: dokku config "{{ application }}"
+  register: debug_dokku_config
+  tags:
+    - never
+    - info
+    - env
+
+- name: display debug_dokku_config
+  debug:
+    msg: "{{ debug_dokku_config.stdout_lines }}"
+  tags:
+    - never
+    - info
+    - env
