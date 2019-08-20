@@ -1,2 +1,4 @@
 ---
 domain: development.bcs.io
+
+rack_dev_mark_env: development
