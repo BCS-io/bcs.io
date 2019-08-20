@@ -7,3 +7,7 @@ controller_key: '~/.ssh/id_rsa.pub'
 # Dokku Specific
 application: bcs-io
 ops_email: ops@bcs.io
+
+
+# banner message
+rack_dev_mark_env: ""
