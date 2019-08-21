@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+#
+# bundle rails
+#
+rails_path=rails
+argument="$1"
+echo "arg ${1}"
+
+print_usage() {
+  printf "bundler\n\n"
+  printf "Bundles the rails project without needing to change directory\n"
+  printf "  h - this help\n"
+  printf "\n"
+  printf "Example: bin/bundler outdated \n"
+}
+
+while getopts 'dhp' flag; do
+  case "${flag}" in
+    h) print_usage
+       exit 1 ;;
+    esac
+done
+
+(cd $rails_path && bundler "$@")
