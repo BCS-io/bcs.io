@@ -71,6 +71,12 @@ Style/StringLiterals:
 Style/SymbolArray:
   EnforcedStyle: brackets
 
+
+Metrics/BlockLength:
+  Enabled: true
+  Exclude:
+    - Guardfile
+
 # Offense count: 7
 # Cop supports --auto-correct.
 # Configuration parameters: AutoCorrect, AllowHeredoc, AllowURI, URISchemes, IgnoreCopDirectives, IgnoredPatterns.
