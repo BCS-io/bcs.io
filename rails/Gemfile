@@ -24,10 +24,19 @@ end
 group :development do
   gem 'bundler-audit'
   gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'guard-livereload', '~> 2.5', require: false
+  gem 'rack-livereload'
   gem 'solargraph'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'web-console', '>= 3.3.0'
+end
+
+group :test do
+  gem 'capybara', '>= 2.15'
+  gem 'minitest-reporters'
+  gem 'selenium-webdriver'
+  gem 'webdrivers'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
