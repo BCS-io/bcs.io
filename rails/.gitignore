@@ -26,6 +26,8 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+# Ignore environmental specific key for encrypting/decrypting credentials
+/config/credentials/*.key
 
 /public/packs
 /public/packs-test
