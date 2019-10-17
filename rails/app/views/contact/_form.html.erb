@@ -1,6 +1,6 @@
-<%= form_with url: "/contact", class: 'c-form__wrapper' do |form| %>
-<fieldset class="c-form">
-  <h4 class="c-form__heading">Contact form</h4>
+<%= form_with model: @contact, url: "/contact", class: 'c-form__wrapper', local: true, validate: true  do |form| %>
+<fieldset class='c-form'>
+  <h4 class='c-form__heading'>Contact form</h4>
 
   <div class="c-form__row">
     <%= form.label :name, class: 'c-form__label' %>
