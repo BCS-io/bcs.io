@@ -5,5 +5,7 @@
 #    - home, about, contact etc
 #
 class PagesController < ApplicationController
-  def home; end
+  def home
+    @contact = Contact.new
+  end
 end
