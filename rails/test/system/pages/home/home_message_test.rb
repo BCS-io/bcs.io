@@ -14,4 +14,14 @@ class HomeMessageTest < ApplicationSystemTestCase
       click_button("Contact")
     end
   end
+
+  test "sets error if incomplete" do
+    visit root_url
+
+    fill_in "Name", with: "John"
+
+    click_button("Contact")
+
+    assert_selector ".message", text: "can't be blank"
+  end
 end
