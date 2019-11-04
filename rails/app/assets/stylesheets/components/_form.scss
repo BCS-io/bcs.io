@@ -73,3 +73,12 @@
         }
     }
 }
+
+.field_with_errors {
+    display: flex;
+    flex-direction: column;
+    border: 2px $color-action solid;
+    color: darken($color-action, 30%);
+    font-size: 1.8rem;
+    padding: 0 .5rem;
+}
