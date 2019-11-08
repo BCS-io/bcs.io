@@ -28,6 +28,8 @@
 /config/master.key
 # Ignore environmental specific key for encrypting/decrypting credentials
 /config/credentials/*.key
+# Except test.key
+!/config/credentials/test.key
 
 /public/packs
 /public/packs-test
@@ -35,3 +37,4 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
