@@ -36,7 +36,9 @@ end
 
 group :test do
   gem 'capybara', '>= 2.15'
+  gem 'minitest-matchers_vaccine'
   gem 'minitest-reporters'
+  gem 'shoulda-matchers'
   gem 'webdrivers'
 end
 
