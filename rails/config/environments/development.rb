@@ -36,6 +36,15 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
+  #
+  # Change to :smtp to email in development
+  #
+  config.action_mailer.delivery_method = :test
+
+
+  host = Rails.application.credentials.domain[:name]
+  config.action_mailer.default_url_options = { host: host, protocol: 'http' }
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
