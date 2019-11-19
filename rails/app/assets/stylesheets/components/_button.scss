@@ -71,4 +71,11 @@
         color: $color-white;
         border: 1px darken($color-action, 15%) solid;
     }
+
+    // https: //bugs.chromium.org/p/chromium/issues/detail?id=262679
+    // fieldsets doesn't work as flex-item in Chrome
+    // log running bug
+    &--chrome-flexbox-fieldset-bug-hack {
+        width: 100%;
+    }
 }
