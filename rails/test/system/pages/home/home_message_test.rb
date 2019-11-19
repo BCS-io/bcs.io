@@ -13,6 +13,8 @@ class HomeMessageTest < ApplicationSystemTestCase
     assert_emails 1 do
       click_button("Contact")
     end
+
+    assert_selector ".flash__text", text: "Your message has been sent!"
   end
 
   test "sets error if incomplete" do
