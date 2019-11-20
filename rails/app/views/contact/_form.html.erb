@@ -1,0 +1,23 @@
+<%= form_with url: "/contact", class: 'c-form__wrapper' do |form| %>
+<fieldset class="c-form">
+  <h4 class="c-form__heading">Contact form</h4>
+
+  <div class="c-form__row">
+    <%= form.label :name, class: 'c-form__label' %>
+    <%= form.text_field :name, class: 'c-form__input', autocorrect: 'off', required: true %>
+  </div>
+
+  <div class="c-form__row">
+    <%= form.label :email, class: 'c-form__label' %>
+    <%= form.text_field :email, class: 'c-form__input', autocorrect: 'off', autocapitalize: 'none', required: true %>
+  </div>
+
+  <div class="c-form__row  c-form__highlight">
+    <%= inline_svg "message.svg", class: 'c-form__image' %>
+    <%= form.label :message, class: 'c-form__label' %>
+    <%= form.text_area :message, class: 'c-form__input c-input-field-multiline', rows: 6 %>
+  </div>
+
+  <%= form.submit 'Contact', class: 'c-btn c-btn--secondary' %>
+</fieldset>
+<% end %>
