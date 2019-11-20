@@ -11,7 +11,7 @@
   </main>
 
   <div class="idea-button">
-    <button class="c-btn c-btn--medium c-btn--action">Let's talk</button>
+    <%= link_to "Let's talk", root_path(anchor: "contact-us"), class: "c-btn c-btn--medium c-btn--action" %>
   </div>
 
   <aside class="idea-picture">
@@ -47,7 +47,8 @@
   <div class="contact-us-heading">
     <h1 class="heading-primary--main">Explore</h1>
 
-    <div class="contact-us">
+
+    <div id="contact-us" class="contact-us">
       <%= render 'contact/form' %>
     </div>
   </div>
