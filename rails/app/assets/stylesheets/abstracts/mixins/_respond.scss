@@ -1,0 +1,76 @@
+// MEDIA QUERY MANAGER
+/*
+Advanced CSS and Sass: Flexbox, Grid  Lesson 56: Let's use the power of Sass Mixins .. 18 mins
+
+Choosing em over pixel
+  - with px if the user chooses to change the default font size of the browser (esp for people
+    wanting accessability) then the media query would be unaffected. However, we want our
+    media query affected by the font size.
+  - em and rem are not affected by the root font setting (e.g. html { font-size: 62.5%; }
+  - rems don't work in all browsers and ems are preferred
+    - safari bug when people wrote about this - no idea if changed
+  - My best understanding: Much of the space used up on webpage is with text. If the user
+    changes the font-size then it will break the design. A larger font-size should give more
+    space to the design. If someone changes the font-size from 16px to 20px then the
+    breakpoint should be larger by 25% (20 / 16) for everything to fit in. EM will give you
+    that as it's based on the font-size but pixels are absolute regardless of font.
+
+  - EMs ARE PREFERRED
+
+    0 - 600px:      Phone
+    600 - 900px:    Tablet portrait
+    900 - 1200px:   Tablet landscape
+    [1200 - 1800] is where our normal styles apply
+    1800px + :      Big desktop
+
+    $breakpoint argument choices:
+    - phone
+    - tab-port
+    - tab-land
+    - big-desktop
+
+    ORDER: Base + typography > general layout + grid > page layout > components
+
+    1em = 16px
+
+    Further Reading
+    https: //zellwk.com/blog/media-query-units/
+*/
+
+@mixin respond($breakpoint) {
+    @if $breakpoint==phone {
+        @media only screen and (max-width: 37.5em) {
+            @content;
+        }
+
+        ; //600px
+    }
+
+    @else if $breakpoint==tablet-portrait {
+        @media only screen and (max-width: 56.25em) {
+            @content
+        }
+
+        ; //900px
+    }
+
+    @else if $breakpoint==tablet-landscape {
+        @media only screen and (max-width: 75em) {
+            @content
+        }
+
+        ; //1200px
+    }
+
+    @else if $breakpoint==big-desktop {
+        @media only screen and (min-width: 112.5em) {
+            @content
+        }
+
+        ; //1800
+    }
+
+    @else {
+        @error "No value could be retrieved from `#{$breakpoint}`";
+    }
+}
