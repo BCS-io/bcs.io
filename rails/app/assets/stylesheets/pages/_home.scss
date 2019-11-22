@@ -111,6 +111,8 @@
     display: flex;
     justify-content: center;
     @include margin-bottom(6);
+
+    clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 99%);
 }
 
 .hand-shake {
