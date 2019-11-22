@@ -52,7 +52,7 @@
 
 .knot {
     grid-area: knot;
-    max-width: 15%;
+    width: 15%;
 
     @include respond(phone) {
         width: 35%;
@@ -61,7 +61,7 @@
 
 .unknot {
     grid-area: unknot;
-    max-width: 25%;
+    width: 25%;
 
     @include respond(phone) {
         width: 50%;
