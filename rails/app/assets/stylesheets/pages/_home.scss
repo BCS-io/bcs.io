@@ -61,11 +61,19 @@
 .knot {
     grid-area: knot;
     max-width: 15%;
+
+    @include respond(phone) {
+        width: 35%;
+    }
 }
 
 .unknot {
     grid-area: unknot;
     max-width: 25%;
+
+    @include respond(phone) {
+        width: 50%;
+    }
 }
 
 .knot,
@@ -73,6 +81,11 @@
     justify-self: center;
     @include margin-top(9);
     @include margin-bottom(9);
+
+    @include respond(phone) {
+        @include margin-top(6);
+        @include margin-bottom(6);
+    }
 }
 
 .solutions-message {
