@@ -1,0 +1,26 @@
+.main-header {
+    @include margin-bottom(1);
+
+    &__logo {
+
+        @include respond(phone) {
+            display: block;
+            @include margin-bottom(1);
+        }
+    }
+
+    &__container {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        @include respond(phone) {
+            justify-content: space-around;
+        }
+    }
+}
+
+.logo {
+    height: 6rem;
+}
