@@ -1,0 +1,74 @@
+//
+//  Example
+//  button
+//  <a
+//    href="#"
+//    class="c-btn c-btn--primary">My Text</a>
+//
+.c-btn {
+
+    display: inline-block;
+    border: none;
+    padding: 1rem 0rem;
+    text-decoration: none;
+    font-family: inherit;
+    font-size: 2.2rem;
+    line-height: 1;
+    cursor: pointer;
+    text-align: center;
+
+    &:link,
+    &:visited {
+        text-decoration: none;
+        display: inline-block;
+        transition: all .2s;
+        position: relative;
+    }
+
+    &:hover {
+        transform: translateY(-2px);
+        filter: brightness(95%);
+        // subtle shadow - no x but some y, 10px is the blur
+        box-shadow: 0 .2rem .6rem rgba($color-black, .2);
+    }
+
+    &:focus {
+        outline: 1px solid $color-white;
+        outline-offset: -4px;
+    }
+
+    &:active {
+        transform: scale(0.99);
+        box-shadow: 0 .5rem 1rem rgba($color-black, .2);
+    }
+
+    &--small {
+        width: 15rem;
+    }
+
+    &--medium {
+        padding: 1.5rem 1rem;
+        width: 25rem;
+    }
+
+    &--large {
+        width: 35rem;
+    }
+
+    &--primary {
+        background-color: $color-primary;
+        color: $color-white;
+    }
+
+    &--secondary {
+        background-color: $color-secondary;
+        color: $color-white;
+        border: 1px darken($color-secondary, 15%) solid;
+    }
+
+    &--action {
+        background-color: $color-action;
+        color: $color-white;
+        border: 1px darken($color-action, 15%) solid;
+    }
+}
