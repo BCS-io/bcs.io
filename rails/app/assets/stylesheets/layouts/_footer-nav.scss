@@ -1,0 +1,43 @@
+.footer-nav {
+    list-style: none;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    grid-gap: 2rem;
+    align-items: center;
+    font-size: 1.6rem;
+    justify-content: flex-start;
+    margin-bottom: 6rem;
+    padding: 1rem;
+
+    &__link:link,
+    &__link:visited {
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        display: block;
+        transition: all .2s;
+
+        background-color: rgba($color-grey-dark-2, .05);
+    }
+
+    &__item {
+        color: $color-grey-light-2;
+        @include margin-bottom(0);
+        display: block;
+    }
+
+    &__link:hover,
+    &__link:active {
+        background-color: rgba(white, .05);
+        transform: translateY(-3px);
+    }
+}
+
+.address {
+    font-style: normal;
+    white-space: pre-line;
+    &:first-line {
+      line-height: 0px;
+    }
+}
