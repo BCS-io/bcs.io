@@ -1,3 +1,47 @@
 <%= content_for :title, "BCS.io" %>
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+<div class="home">
+  <main class="idea-message">
+    <h1>We are developers</h1>
+    <p>Succesful development is a lasting conversation about your business. As we talk, we get a clear view of your business needs and letting us unwind any knotty problems.</p>
+  </main>
+
+  <div class="idea-button">
+    <button class="c-btn c-btn--medium c-btn--action">Let's talk</button>
+  </div>
+
+  <aside class="idea-picture">
+    <%= render_svg "the-idea" %>
+  </aside>
+
+  <div class="knot">
+    <%= render_svg "knot" %>
+  </div>
+
+  <div class="solutions-clouds">
+    <%= render_svg "solutions-clouds" %>
+  </div>
+
+  <article class="solutions-message">
+    <h1>Uplifiting Solutions</h1>
+    <p>Once we understand you business need we can develop quickly and you review the solution early and often so you know what you're paying for and keeping you in the loop.</p>
+  </article>
+
+  <aside class="solutions-picture">
+    <%= render_svg "solutions-ballon" %>
+  </aside>
+
+  <div class="unknot">
+    <%= render_svg "unknot" %>
+  </div>
+
+  <div class="contact-us-heading">
+    <h1>Explore</h1>
+
+    <h2>Contact us form</h2>
+  </div>
+
+  <div class="hand-shake">
+    <%= render_svg "hand-shake" %>
+  </div>
+</div>
