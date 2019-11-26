@@ -1,0 +1,27 @@
+//
+// wrapper around the application
+//
+
+@mixin wrapper {
+    margin: 1rem 3rem;
+
+    @include respond(phone) {
+        margin: .5rem 1rem;
+    }
+}
+
+// Cancel Wrapper
+// - Items nested in the container can want to stretch outside it
+//   this mixin allows that
+//
+// - wrapper next to cancel-wrapper
+//   - this is an attempt to avoid changing one
+//     without changing the other
+
+@mixin cancel-wrapper {
+    margin: -1rem -3rem;
+
+    @include respond(phone) {
+        margin: -.5rem -1rem;
+    }
+}
