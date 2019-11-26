@@ -1,0 +1,41 @@
+.about {
+  justify-items: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: auto min-content 1fr auto;
+  grid-gap: 0;
+  grid-template-areas:
+    "menu               "
+    "main"
+    "action"
+    "skyline            "
+    "footer             "
+  ;
+  height: 100vh;
+}
+
+.about {
+  grid-area: about;
+}
+
+.menu,
+.footer {
+  justify-self: stretch;
+}
+
+.main {
+  grid-area: main;
+  max-width: 60rem;
+  @include margin-bottom(2);
+}
+
+.action {
+  grid-area: action;
+}
+
+.skyline {
+    grid-area: skyline;
+    justify-self: flex-end;
+    align-self: flex-end;
+    height: 10rem;
+}

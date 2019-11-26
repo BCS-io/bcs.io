@@ -1,0 +1,25 @@
+<%= content_for :title, "About | BCS.io" %>
+
+<div class="about">
+  <div class="menu">
+    <%= render 'layouts/main-header' %>
+  </div>
+
+  <div class="main">
+    <h1 class="heading-primary--main">About</h1>
+
+    <p class="paragraph">BCS Limited is a Birmingham software company that develops systems for businesses and specialises in the agile evolution of websites.</p>
+    <p class="paragraph">We will work with you to get your ideas off the ground and flying.</p>
+    <p class="paragraph">We keep listening and we keep refining until you're satisfied.</p>
+  </div>
+
+  <div class="action">
+    <%= link_to "Hire Us", root_path(anchor: "contact-us"), class: "c-btn c-btn--medium c-btn--action" %>
+  </div>
+
+  <div class="skyline">
+    <%= inline_svg "city-skyline.svg" %>
+  </div>
+
+  <%= render 'layouts/footer' %>
+</div>
