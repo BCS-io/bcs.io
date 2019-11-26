@@ -1,0 +1,21 @@
+//
+// Media object
+//
+.c-media {
+    align-items: center;
+    display: grid;
+    grid-template-areas: "figure body";
+    grid-template-columns: 4rem 1fr;
+    grid-gap: 0 2rem;
+
+    &__figure {
+        grid-area: figure;
+        font-size: 1rem;
+    }
+
+    &__body {
+        grid-area: body;
+        font-style: normal;
+        justify-self: flex-start;
+    }
+}
