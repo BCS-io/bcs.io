@@ -1,0 +1,36 @@
+.gallery {
+    grid-area: gallery;
+    background-color: $color-grey-light-1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(8, 5vw);
+    grid-gap: 1.5rem;
+    padding: 1.5rem;
+
+    &__item {
+        background-color: $color-grey-light-3;
+        padding: 1rem;
+
+        &--1 {
+            background-color: $color-secondary;
+            grid-row: 1 / span 4;
+            grid-column: 1 / span 1;
+            border: 2px darken($color-secondary, 10%) solid;
+        }
+
+        &--2 {
+            background-color: $color-action;
+            grid-row: 1 / span 4;
+            grid-column: 2 / span 1;
+            transform: translateY(-2rem);
+            border: 2px darken($color-action, 10%) solid;
+        }
+    }
+
+    &__img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        display: block;
+    }
+}

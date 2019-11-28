@@ -13,7 +13,11 @@
                       <span class= 'main-nav__item--active'>About</span>
                     <% end %>
                 </li>
-                <li class="main-nav__item">Work</li>
+                <li class="main-nav__item">
+                    <%= link_to_unless_current "Work", work_pages_path do %>
+                      <span class= 'main-nav__item--active'>Work</span>
+                    <% end %>
+                </li>
                 <li class="main-nav__item">Contact</li>
             </ul>
         </nav>
