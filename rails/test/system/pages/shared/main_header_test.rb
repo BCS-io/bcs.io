@@ -12,6 +12,11 @@ class MainHeaderTest < ApplicationSystemTestCase
     assert_current_path('/about')
     assert_title "About | BCS.io"
 
+    click_link("Work")
+
+    assert_current_path('/work')
+    assert_title "Work | BCS.io"
+
     click_link("home-logo")
 
     assert_current_path('/')
