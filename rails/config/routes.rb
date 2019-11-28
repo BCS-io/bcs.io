@@ -7,5 +7,9 @@ Rails.application.routes.draw do
 
   resource :pages, path: '' do
     get :about
+    get :work
+  end
+
+  resource :works do
   end
 end
