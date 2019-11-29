@@ -1,0 +1,12 @@
+pre-push:
+  parallel: true
+  commands:
+    rubocop:
+      tags: backend
+      run: (cd rails && bundle exec rubocop)
+    minitest:
+      tags: minitest backend
+      run: bin/rails test
+    minitest-system:
+      tags: minitest backend system
+      run: bin/rails test:system
