@@ -1,0 +1,14 @@
+pre-push:
+  parallel: true
+  commands:
+    audit:
+      run: (cd rails && brakeman --no-pager)
+    rubocop:
+      tags: backend
+      run: (cd rails && bundle exec rubocop --parallel)
+    minitest:
+      tags: minitest backend
+      run: bin/rails test
+    minitest-system:
+      tags: minitest backend system
+      run: bin/rails test:system
