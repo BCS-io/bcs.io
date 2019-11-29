@@ -1,0 +1,30 @@
+pre-commit:
+  parallel: true
+  commands:
+    audit:
+      root: "rails/"
+      run: brakeman --no-pager
+    rubocop:
+      root: "rails/"
+      files: git diff --name-only --staged
+      glob: "*.rb"
+      run: bundle exec rubocop --force-exclusion {files}
+
+pre-push:
+  parallel: true
+  commands:
+    audit:
+      root: "rails/"
+      run: brakeman --no-pager
+    rubocop:
+      root: "rails/"
+      tags: backend
+      run: bundle exec rubocop --parallel
+    minitest:
+      root: "rails/"
+      tags: minitest backend
+      run: rails test
+    minitest-system:
+      root: "rails/"
+      tags: minitest backend system
+      run: rails test:system
