@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   end
 
   resource :works do
+    get :bcsio
   end
 end
