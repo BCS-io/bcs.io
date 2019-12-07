@@ -50,3 +50,7 @@ jobs:
         run: |
           bundle exec rails test
           bundle exec rails test:system
+
+      - name: Run Rubocop
+        working-directory: ./rails
+        run: bin/rubocop
