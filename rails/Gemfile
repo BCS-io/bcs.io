@@ -17,6 +17,7 @@ gem 'webpacker', '~> 4.0'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'brakeman', require: false
   gem 'factory_bot_rails'
   gem 'rubocop', '~> 0.74.0', require: false
 end
