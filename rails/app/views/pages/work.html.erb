@@ -6,11 +6,15 @@
 
     <section class="gallery">
       <figure class="gallery__item gallery__item--1">
-        <%= inline_svg "adams-logo.svg", class: 'gallery__img' %>
+        <%= link_to "https://github.com/BCS-io/letting" do
+          inline_svg "adams-logo.svg", class: 'gallery__img test_letting'
+        end %>
       </figure>
 
       <figure class="gallery__item gallery__item--2">
-        <%= inline_svg "work/bcs_io/cover.svg", class: 'gallery__img' %>
+        <%= link_to "https://github.com/BCS-io/bcs.io" do
+          inline_svg "work/bcs_io/cover.svg", class: 'gallery__img test_bcs_io'
+        end %>
       </figure>
     </section>
   </div>
