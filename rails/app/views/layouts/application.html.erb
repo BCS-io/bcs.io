@@ -16,9 +16,13 @@
     <meta name="theme-color" content="#FCC133">
   </head>
 
-  <body>
+  <body class="application">
+    <div class="wrapper">
+      <%= render 'layouts/main-header' %>
+    </div>
     <div class="wrapper">
       <%= yield %>
     </div>
+    <%= render 'layouts/footer' %>
   </body>
 </html>
