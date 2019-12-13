@@ -3,10 +3,6 @@ pre-commit:
   commands:
     audit:
       run: (cd rails && brakeman --no-pager)
-    rubocop:
-      files: git diff --name-only --staged
-      glob: "*.rb"
-      run: (cd rails && rubocop --force-exclusion {files})
 
 pre-push:
   parallel: true
