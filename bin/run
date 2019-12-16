@@ -13,18 +13,42 @@ terraform_project_path="./terraform/project"
 ip_address=''
 
 print_usage() {
-  printf "Ansible wrapper\n\n"
-  printf "options are as follows:\n"
-  printf "Limiting of playbook hosts - optional:\n"
+  printf "***************************************************\n"
+  printf "*                  BCS.io                         *\n"
+  printf "***************************************************\n\n"
+  printf "Terraform bash script wrapper\n\n"
+  printf " - runs terraform script and updates hosts file with new address"
+  printf "Workspace options are as follows - choose one:\n"
   printf "  -d development\n"
   printf "  -p production\n"
-  printf ""
-  printf "Terraform action\n"
+  printf "\n"
+  printf "Terraform action (optional)\n"
   printf "  -a apply\n"
-  printf "    -the default is to destroy and then apply\n"
+  printf "  -b destroy and then apply (default)\n"
+  printf "\n"
   printf "Example: bin/run -d  \n"
 }
 
+print_banner() {
+  printf "\n\n"
+  printf "  ******************************************\n"
+  printf "  *                                        *\n"
+  printf "  *           Destroy Production?          *\n"
+  printf "  *                                        *\n"
+  printf "  ******************************************\n"
+  printf "\n\n"
+}
+
+are_you_sure() {
+  read -p "Continue (y/n)? " choice
+  case "$choice" in
+    y|Y ) printf "\nYes. Continuing...\n";;
+    n|N ) printf "\nNo. Exiting\n"
+          exit 1 ;;
+    * ) printf "\nInvalid. Exiting\n"
+        exit 1 ;;
+  esac
+}
 
 while getopts 'adht:p' flag; do
   case "${flag}" in
@@ -33,12 +57,19 @@ while getopts 'adht:p' flag; do
        workspace='development' ;;
     h) print_usage
        exit 1 ;;
-    p) option="-${flag}"
+    p) print_banner
+       are_you_sure
+       option="-${flag}"
        workspace='production' ;;
     *) print_usage
        exit 1;;
   esac
 done
+
+if [ -z "$workspace"]; then
+  printf "Workspace was not set. Choose a workspace option\n"
+  printf " -------------------------------------------------\n\n"
+fi
 
 if (( $OPTIND == 1 )); then
   print_usage
