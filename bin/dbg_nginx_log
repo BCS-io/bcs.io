@@ -6,6 +6,7 @@
 #
 
 server=noss.bcs.io
+ansible_path="./ansible/web"
 
 print_usage() {
   printf "dbg_log help\n\n"
@@ -14,6 +15,11 @@ print_usage() {
   printf "A bcs-io-access.log\n"
   printf "e error.log\n"
   printf "E bcs-io-error.log\n"
+  printf "\n"
+  printf "Limiting of playbook hosts - optional:\n"
+  printf "  -d development\n"
+  printf "  -p production (default)\n"
+
 }
 
 log_file=''
@@ -24,14 +30,16 @@ if [ $# -eq 0 ]; then
 fi
 
 
-while getopts 'aAbeEh' flag; do
+while getopts 'aAbdeEhp' flag; do
   case "${flag}" in
     a) log_file=access.log ;;
+    d) server='noss.bcs.io' ;;
     A) log_file=bcs-io-access.log ;;
     e) log_file=error.log ;;
     E) log_file=bcs-io-error.log ;;
     h) print_usage
        exit 1 ;;
+    p) server='papa.bcs.io' ;;
     *) print_usage
        exit 1;;
   esac
@@ -43,5 +51,5 @@ if [[ -n $log_file ]]; then
   echo "NGINX Logs: ${server} ${log_file}"
   echo ""
 
-  ansible $server -a "cat ${log_file}"
+  cd $ansible_path && ansible $server -a "cat ${log_file}" --inventory hosts.ini
 fi
