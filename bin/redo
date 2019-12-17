@@ -6,6 +6,6 @@ echo "start"
 source ${__dir}/clean
 source ${__dir}/terraform apply -auto-approve
 source ${__dir}/ansible-playbook
-source ${__dir}/gp
+source ${__dir}/deploy
 source ${__dir}/ansible-playbook
 echo "end"
