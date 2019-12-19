@@ -26,10 +26,5 @@ Rails monolith for the BCS.io website.
 
 Terraform configuration is specific for a single cloud provider. Only would be required if you needed to automate the creation of the Ubuntu server. Otherwise it can be ignored.
 
-Associated scripts:
-
-- bin/terraform - wrapper around terraform CLI
-- bin/run - calls `bin/terraform` and updates the hosts file with ip address changes
-
 [1]: https://bcs.io
 [2]: https://github.com/dokku/dokku
