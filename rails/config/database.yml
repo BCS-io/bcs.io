@@ -78,6 +78,12 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+staging:
+  <<: *default
+  database: bcsio_staging
+  username: bcsio
+  password: <%= ENV['RAILS_DATABASE_PASSWORD'] %>
+
 production:
   <<: *default
   database: bcsio_production
