@@ -5,13 +5,12 @@
 #
 
 tags=all
-limit=''
+environment='staging'
 
 print_usage() {
   printf "Ansible wrapper\n\n"
   printf "options are as follows:\n"
   printf "Limiting of playbook hosts - optional:\n"
-  printf "  -a all\n"
   printf "  -p production\n"
   printf "  -s staging\n\n"
   printf ""
@@ -24,11 +23,10 @@ print_usage() {
 
 while getopts 'adht:ps' flag; do
   case "${flag}" in
-    a) limit='' ;;
     h) print_usage
        exit 1 ;;
-    p) limit='--limit papa.bcs.io' ;;
-    s) limit='--limit oxna.bcs.io' ;;
+    p) environment='production' ;;
+    s) environment='staging' ;;
     t) tags=$OPTARG ;;
     *) print_usage
        exit 1;;
@@ -42,4 +40,4 @@ fi
 
 ansible_path="./ansible/web"
 
-(cd $ansible_path && ansible-playbook site.yml --inventory hosts.ini  ${limit} --tags "${tags}")
+(cd $ansible_path && ansible-playbook site.yml --inventory ${environment}  --tags "${tags}")
