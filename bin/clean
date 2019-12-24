@@ -7,12 +7,15 @@
 #
 
 OPTIND=1
+domain='bcs.io'
+staging_server='oxna'
+production_server='papa'
 
 print_usage() {
   printf "Cleaning host key from known hosts\n\n"
   printf "Options flags as follows:\n"
-  printf "  s - staging\n"
-  printf "  p - production\n"
+  printf "  -s staging\n"
+  printf "  -p production\n"
   printf "\n"
   printf "Example: clean -p \n"
 }
@@ -26,17 +29,17 @@ while getopts 'hps' flag; do
   case "${flag}" in
     h) print_usage
        exit 1 ;;
-    p) ssh-keygen -R bcs.io
-       ssh-keygen -R papa.bcs.io
-       ssh-keygen -R papa
+    p) ssh-keygen -R ${domain}
+       ssh-keygen -R ${production_server}.${domain}
+       ssh-keygen -R ${production_server}
        # return ip from hosts file
-       ip=$(dscacheutil -q host -a name papa.bcs.io  | grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b")
+       ip=$(dscacheutil -q host -a name ${production_server}.${domain}  | grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b")
        ssh-keygen -R $ip ;;
-    s) ssh-keygen -R staging.bcs.io
-       ssh-keygen -R oxna.bcs.io
-       ssh-keygen -R oxna
+    s) ssh-keygen -R staging.${domain}
+       ssh-keygen -R ${staging_server}.${domain}
+       ssh-keygen -R ${staging_server}
        # return ip from hosts file
-       ip=$(dscacheutil -q host -a name oxna.bcs.io  | grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b")
+       ip=$(dscacheutil -q host -a name ${staging_server}.${domain} | grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b")
        ssh-keygen -R $ip ;;
     *) print_usage
        exit 1;;
