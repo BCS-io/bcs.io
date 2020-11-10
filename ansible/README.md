@@ -64,6 +64,12 @@ ansible
     1. `bin/ansible-galaxy-requirements` - installs Ansible libraires required
     2. `bin/ansible-playbook` - provisions the server using this Ansible setup
 
+## Example of running a task
+
+Runs an ansible playbook tasks on production with tag ssl
+
+`bin/ansible-playbook -p -t ssl`
+
 
 [1]: https://github.com/dokku/ansible-dokku
 [2]: https://github.com/BCS-io/letting/tree/master/ansible
