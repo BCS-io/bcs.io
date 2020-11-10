@@ -15,7 +15,7 @@
     - dokku
     - ssl
 
-- name: website {{ application }}
+- name: website live {{ application }}
   uri:
     url: "http://{{ domain }}"
   ignore_errors: yes
