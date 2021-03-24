@@ -23,8 +23,8 @@
     to_port: "{{ item }}"
     proto: tcp
   with_items:
-    - 80
-    - 443
+    - '80'
+    - '443'
   tags:
     - ufw
 
