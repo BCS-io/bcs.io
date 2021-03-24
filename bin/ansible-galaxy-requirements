@@ -4,8 +4,40 @@
 # ansible-galaxy-requirements
 #  - installs libraries used in projects ansible-playbook
 
-ansible-galaxy install -r ansible/requirements.yml
+force=''
 
-echo
-echo "List installed libraries"
-ansible-galaxy list
+list() {
+  echo
+  echo "List installed libraries"
+  ansible-galaxy list
+}
+
+
+print_usage() {
+  printf "Ansible galaxy requirements\n\n"
+  printf "options are as follows:\n"
+  printf "  -f force\n\n"
+  printf "  -i install\n"
+  printf "  -h this help message\n"
+  printf "  -l list installed libraries\n"
+  printf "Example: bin/ansible-galaxy-requirements -i -f \n"
+}
+
+while getopts 'fhil' flag; do
+  case "${flag}" in
+    f) force='--force' ;;
+    l) list ;;
+    h) print_usage
+       exit 1 ;;
+    i) ;;
+    *) print_usage
+       exit 1;;
+  esac
+done
+
+if (( $OPTIND == 1 )); then
+  print_usage
+  exit 1
+fi
+
+ansible-galaxy install -r ansible/requirements.yml ${force}
