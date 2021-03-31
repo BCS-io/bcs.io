@@ -17,11 +17,10 @@
 !/log/.keep
 !/tmp/.keep
 
-# doing the same as storage but not does seem to work
-# ended up commenting out /tmp* temporarily and 
-# adding in /pids/.keep
-/pids/*
-!/pids/.keep
+# Ignore pidfiles, but keep the directory.
+/tmp/pids/*
+!/tmp/pids/
+!/tmp/pids/.keep
 
 # Ignore uploaded files in development.
 /storage/*
