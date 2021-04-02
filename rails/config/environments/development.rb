@@ -43,7 +43,7 @@ Rails.application.configure do
 
 
   host = Rails.application.credentials.domain[:name]
-  config.action_mailer.default_url_options = { host: host, protocol: 'http' }
+  config.action_mailer.default_url_options = { host: host, protocol: 'http', port: 3000 }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
