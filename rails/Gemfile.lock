@@ -71,6 +71,8 @@ GEM
     bindex (0.8.1)
     bootsnap (1.4.5)
       msgpack (~> 1.0)
+    boring_generators (0.8.0)
+      railties
     brakeman (4.7.2)
     builder (3.2.4)
     bundler-audit (0.6.1)
@@ -333,6 +335,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap (>= 1.4.2)
+  boring_generators
   brakeman
   bundler-audit
   byebug

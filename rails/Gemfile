@@ -27,6 +27,7 @@ end
 
 group :development do
   gem 'bundler-audit'
+  gem 'boring_generators'
   gem 'listen', '~> 3.2'
   gem 'guard-livereload', '~> 2.5', require: false
   gem 'rack-livereload'
