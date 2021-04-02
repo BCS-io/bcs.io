@@ -43,3 +43,5 @@
 yarn-debug.log*
 .yarn-integrity
 
+# rails erd
+erd.pdf

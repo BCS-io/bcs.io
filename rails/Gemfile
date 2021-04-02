@@ -29,6 +29,7 @@ group :development do
   gem 'listen', '~> 3.2'
   gem 'guard-livereload', '~> 2.5', require: false
   gem 'rack-livereload'
+  gem 'rails-erd'
   gem 'solargraph'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
