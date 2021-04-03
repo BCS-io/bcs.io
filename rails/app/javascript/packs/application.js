@@ -24,3 +24,5 @@ require("@client-side-validations/client-side-validations")
 
 require("trix")
 require("@rails/actiontext")
+
+import "stylesheets/application"
