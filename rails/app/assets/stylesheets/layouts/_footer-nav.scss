@@ -1,14 +1,9 @@
 .footer-nav {
-    list-style: none;
-
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
     grid-gap: 2rem;
     align-items: center;
-    font-size: 1.6rem;
     justify-content: flex-start;
-    margin-bottom: 6rem;
-    padding: 1rem;
 
     &__link:link,
     &__link:visited {
