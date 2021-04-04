@@ -3,18 +3,18 @@
         <li class="footer-nav__item">
             <%= render_svg "logo-dark-1", styles: 'logo footer-nav__item' %>
         </li>
-        <li class="footer-nav__item">
+        <li class="text-gray-200">
             <%= link_to "https://github.com/BCS-io", class: 'footer-nav__link' do %>
               <%= render_svg "github", styles: 'logo' %>
             <% end %>
         </li>
-        <li class="footer-nav__item">
+        <li class="text-gray-200">
             <div class="c-media">
                 <div class="c-media__figure">
                 <%= render_svg "location" %>
                 </div>
                 <div class="media__body">
-                    <address class="address">
+                    <address class="address not-italic whitespace-pre-line">
                     Business Consolidating Services
                     Birmingham
                     B75 6NR
@@ -22,7 +22,7 @@
                 </div>
             </div>
         </li>
-        <li class="footer-nav__item">
+        <li class="text-gray-200">
             <%= link_to "mailto:hello@bcs.io", class: "footer-nav__link" do %>
                 <div class="c-media">
                     <div class="c-media__figure">
