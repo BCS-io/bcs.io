@@ -4,6 +4,7 @@
 # push subtree to repo
 #
 
+branch=master
 code_path=rails
 platform=dokku
 environment=staging
@@ -57,8 +58,9 @@ are_you_sure() {
   esac
 }
 
-while getopts 'DHfhps' flag; do
+while getopts 'b:DHfhps' flag; do
   case "${flag}" in
+    b) branch=$OPTARG ;;
     D) platform=dokku;;
     H) platform=heroku;;
     f) force=true ;;
@@ -82,8 +84,8 @@ fi
 remote_repo=${platform}-${environment}
 
 if [ "$force" = true ]; then
-  echo "force push"
-  git push $remote_repo `git subtree split --prefix $code_path master`:master --force
+  # echo "force push"
+  git push $remote_repo `git subtree split --prefix $code_path ${branch}`:${branch} --force
 else
-  git subtree push --prefix $code_path $remote_repo master
+  git subtree push --prefix $code_path $remote_repo ${branch}
 fi
