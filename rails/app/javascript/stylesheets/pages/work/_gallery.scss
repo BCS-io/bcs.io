@@ -3,12 +3,12 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(8, 5vw);
-    grid-gap: 1.5rem;
-    padding: 1.5rem;
+    grid-gap: 0.9375rem;
+    padding: 0.9375rem;
 
     &__item {
         background-color: $color-grey-light-3;
-        padding: 1rem;
+        padding: 0.625rem;
 
         &--1 {
             background-color: $color-secondary;
@@ -21,7 +21,7 @@
             background-color: $color-action;
             grid-row: 1 / span 4;
             grid-column: 2 / span 1;
-            transform: translateY(-2rem);
+            transform: translateY(-1.25rem);
             border: 2px darken($color-action, 10%) solid;
         }
     }

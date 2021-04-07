@@ -9,10 +9,10 @@
 
     display: inline-block;
     border: none;
-    padding: 1rem 0rem;
+    padding: 0.63rem 0rem;
     text-decoration: none;
     font-family: inherit;
-    font-size: 2.2rem;
+    font-size: 1.4rem;
     line-height: 1;
     cursor: pointer;
     text-align: center;
@@ -29,7 +29,7 @@
         transform: translateY(-2px);
         filter: brightness(95%);
         // subtle shadow - no x but some y, 10px is the blur
-        box-shadow: 0 .2rem .6rem rgba($color-black, .2);
+        box-shadow: 0 .15rem .4rem rgba($color-black, .2);
     }
 
     &:focus {
@@ -39,20 +39,20 @@
 
     &:active {
         transform: scale(0.99);
-        box-shadow: 0 .5rem 1rem rgba($color-black, .2);
+        box-shadow: 0 .3rem .6rem rgba($color-black, .2);
     }
 
     &--small {
-        width: 15rem;
+        width: 9rem;
     }
 
     &--medium {
-        padding: 1.5rem 1rem;
-        width: 25rem;
+        padding: .9rem .6rem;
+        width: 15rem;
     }
 
     &--large {
-        width: 35rem;
+        width: 22rem;
     }
 
     &--primary {

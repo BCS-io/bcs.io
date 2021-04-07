@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: 1fr minmax(0, 1.5fr);
     grid-auto-rows: auto;
-    grid-gap: 0 3rem;
+    grid-gap: 0 1.875rem;
     grid-template-areas:
         "idea-message        idea-picture"
         "idea-button         idea-button"
@@ -46,7 +46,7 @@
 
 .idea-picture {
     grid-area: idea-picture;
-    padding: 1rem;
+    padding: 0.625rem;
     @include margin-bottom(3);
 }
 
@@ -91,7 +91,7 @@
     display: grid;
     justify-self: center;
     text-align: center;
-    max-width: 45rem;
+    max-width: 28.125rem;
 }
 
 .solutions-clouds {
@@ -124,7 +124,7 @@
     align-self: flex-end;
     justify-self: flex-end;
     grid-area: hand-shake;
-    height: 20rem;
-    max-width: 20rem;
+    height: 12.5rem;
+    max-width: 12.5rem;
     @include margin-bottom(3);
 }

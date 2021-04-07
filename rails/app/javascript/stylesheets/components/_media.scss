@@ -5,8 +5,8 @@
     align-items: center;
     display: grid;
     grid-template-areas: "figure body";
-    grid-template-columns: 4rem 1fr;
-    grid-gap: 0 2rem;
+    grid-template-columns: 2.5rem 1fr;
+    grid-gap: 0 1.25rem;
 
     &__figure {
         grid-area: figure;
