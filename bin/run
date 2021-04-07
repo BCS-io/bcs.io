@@ -53,9 +53,10 @@ are_you_sure() {
   esac
 }
 
-while getopts 'ahnpst:' flag; do
+while getopts 'abhnpst:' flag; do
   case "${flag}" in
     a) terraform_action="-a" ;;
+    b) terraform_action="-b" ;;
     h) print_usage
        exit 1 ;;
     n) terraform_action="-n" ;;
