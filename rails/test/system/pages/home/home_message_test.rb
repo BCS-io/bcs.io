@@ -18,7 +18,6 @@ class HomeMessageTest < ApplicationSystemTestCase
   end
 
   test "sets error if incomplete" do
-    skip "Error messages are not displayed in development"
     visit root_url
 
     fill_in "Name", with: "John"
