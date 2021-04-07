@@ -11,6 +11,8 @@ require("jquery")
 
 require("packs/slide")
 
+require.context('../images', true);
+
 // Client Side Validation
 require("@client-side-validations/client-side-validations")
 
