@@ -28,7 +28,10 @@ jobs:
         uses: actions/setup-ruby@v1
         with:
           ruby-version: 2.7
-
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.16.2'
       - name: Install dependencies
         working-directory: ./rails
         env:
