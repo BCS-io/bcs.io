@@ -34,6 +34,7 @@ jobs:
         env:
           PGHOST: localhost
           PGUSER: postgres
+          PGPASSWORD: postgres
           RAILS_ENV: test
         run: |
           sudo apt-get -yqq install libpq-dev
@@ -48,6 +49,7 @@ jobs:
         env:
           PGHOST: localhost
           PGUSER: postgres
+          PGPASSWORD: postgres
           RAILS_ENV: test
         run: |
           bundle exec rails test
