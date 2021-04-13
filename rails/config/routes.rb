@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   end
 
   resource :works do
+    get :lettings
   end
 end
