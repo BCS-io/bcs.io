@@ -5,4 +5,5 @@
 #    - different custom urls
 #
 class WorksController < ApplicationController
+  def lettings; end
 end

@@ -2,7 +2,7 @@ require 'application_system_test_case'
 
 class WorkLinkTest < ApplicationSystemTestCase
   test "check links work" do
-    links = { 'svg.test_letting' => 'https://github.com/BCS-io/letting',
+    links = { 'svg.test_letting' => lettings_works_path,
               'svg.test_bcs_io' => 'https://github.com/BCS-io/bcs.io' }
 
     links.to_a.each do |link|
