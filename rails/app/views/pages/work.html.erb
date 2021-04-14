@@ -5,13 +5,19 @@
     <h1 class="heading-primary heading-primary--title">Work</h1>
 
     <section class="gallery">
-      <figure class="gallery__item gallery__item--1">
+      <figure class="gallery__item gallery__item--1 flex items-center text-xs sm:text-lg md:text-2xl lg:text-4xl">
+          <div>
+            We design advanced websites that are built around your customer's needs and your business goals.
+          </div>
+      </figure>
+
+      <figure class="gallery__item gallery__item--2">
         <%= link_to "https://github.com/BCS-io/letting" do
           render_svg "adams-logo", styles: 'gallery__img test_letting'
         end %>
       </figure>
 
-      <figure class="gallery__item gallery__item--2">
+      <figure class="gallery__item gallery__item--3">
         <%= link_to "https://github.com/BCS-io/bcs.io" do
           render_svg "work/bcs_io/cover", styles: 'gallery__img test_bcs_io', title: 'BCS.io'
         end %>
