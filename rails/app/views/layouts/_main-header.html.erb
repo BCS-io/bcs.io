@@ -1,24 +1,25 @@
-<header class="main-header">
-    <div class="main-header__container">
-        <%= link_to root_url, id: 'home-logo' do %>
-            <h1 class="main-header__logo">
-                <%= render_svg "logo", styles: 'logo' %>
+<header class="main-header flex flex-col justify-end">
+    <div class="flex items-baseline justify-between flex-wrap">
+        <%= link_to root_url,  class: 'relative', id: 'home-logo' do %>
+            <h1 class="no-underline">
+                <%= render_svg "logo", styles: 'h-14' %>
             </h1>
+            <span class="text-gray-500 text-sm absolute -bottom-5 left-0">Business software</span>
         <% end %>
 
-        <nav>
-            <ul class="main-nav__list">
-                <li class="main-nav__item">
-                    <%= link_to_unless_current "About", about_pages_path do %>
-                      <span class= 'main-nav__item--active'>About</span>
+        <nav class="p-0 m-0">
+            <ul class="flex m-0 p-0 text-lg sm:text-3xl active:underline p-0 m-0">
+                <li class="p-0 ml-4">
+                    <%= link_to_unless_current "About", about_pages_path, class: 'align-top' do %>
+                      <span class= 'underline font-bold'>About</span>
                     <% end %>
                 </li>
-                <li class="main-nav__item">
-                    <%= link_to_unless_current "Work", work_pages_path do %>
-                      <span class= 'main-nav__item--active'>Work</span>
+                <li class="p-0 ml-4 sm:ml-8">
+                    <%= link_to_unless_current "Work", work_pages_path, class: '' do %>
+                      <span class= 'underline font-bold'>Work</span>
                     <% end %>
                 </li>
-                <li class="main-nav__item"><%= link_to "Contact", root_path(anchor: "contact-us") %></li>
+                <li class="p-0 ml-4 sm:ml-8"><%= link_to "Contact", root_path(anchor: "contact-us"), class: '' %></li>
             </ul>
         </nav>
     </div>

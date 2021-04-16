@@ -1,59 +1,47 @@
 <%= content_for :title, "BCS.io" %>
 
 <div class="home">
-  <main class="idea-message">
-    <h1 class="heading-primary">We are developers</h1>
-    <p class="paragraph">Successful software is a conversation.</p>
-    <p class="paragraph">We listen. We talk.</p>
-    <p class="paragraph">Between us we will find a clear path through your needs and wants, queries and worries, working towards your goal.</p>
-    <p class="paragraph">You want to follow the thread to your aim.</p>
-    <p class="paragraph">Together we'll unwind any development knots.</p>
+  <main class="mt-4 max-w-md text-center text-xl mx-auto">
+    <h1>We create successful digital products by listening and talking to you</h1>
+    <div class="mt-4">We work to understand your business and solve your problems. This allows us to create the best possible applications and allows you to meet your targets and create new business opportunities.</div>
   </main>
 
-  <div class="idea-button">
-    <%= link_to "Let's talk", root_path(anchor: "contact-us"), class: "c-btn c-btn--medium c-btn--action" %>
+  <div class="idea-button mt-12">
+    <%= link_to "Let's talk", root_path(anchor: "contact-us"), class: "c-btn c-btn--medium c-btn--action px-10 py-6 rounded" %>
   </div>
 
-  <aside class="idea-picture">
+  <aside class="idea-picture mt-8">
     <%= render_svg "the-idea" %>
   </aside>
 
-  <div class="knot">
+  <div class="knot mt-36 justify-self-center w-3/6 md:w-2/6 xl:w-3/12 2xl:w-1/6">
     <%= render_svg "knot" %>
   </div>
 
-  <div class="solutions-clouds">
-    <%= render_svg "solutions-clouds" %>
-  </div>
-
-  <article class="solutions-message">
-    <h1 class="heading-primary">Solutions that take flight</h1>
-
-    <p class="paragraph">With you, we understand your business.</p>
-    <p class="paragraph">We can develop quickly.</p>
-    <p class="paragraph">You can review solutions early and often.</p>
-    <p class="paragraph">You know what you're paying for.</p>
-    <p class="paragraph">You know your work is ready for lift-off.</p>
+  <article class="flex flex-col justify-center lg:h-screen max-w-md text-center whitespace-pre-line text-2xl mt-14 mx-auto">
+      <h1 class="text-2xl">Solutions that take flight</h1>
+      <span class="mt-4">Working with you and understanding your business we can develop your project quickly. We use robust review and testing procedures to ensure a speedy lift-off</span>
   </article>
 
-  <aside class="solutions-picture">
+  <aside class="solutions-picture mt-36">
+    <%= render_svg "solutions-clouds" %>
     <%= render_svg "solutions-ballon" %>
   </aside>
 
-  <div class="unknot">
+  <div class="unknot mt-36 justify-self-center w-3/6 lg:w-5/12 xl:w-2/6">
     <%= render_svg "unknot" %>
   </div>
 
-  <div class="contact-us-heading">
+  <div class="contact-us-heading mt-36">
     <h1 class="heading-primary">Explore</h1>
 
 
-    <div id="contact-us" class="contact-us">
+    <div id="contact-us" class="contact-us flex justify-center">
       <%= render 'contact/form' %>
     </div>
   </div>
 
-  <div class="hand-shake">
+  <div class="hand-shake self-end justify-self-end h-120 max-w-xs mt-36 mb-6">
     <%= render_svg "hand-shake" %>
   </div>
 </div>
