@@ -70,4 +70,6 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   config.middleware.insert_after ActionDispatch::Static, Rack::LiveReload
+
+  config.hosts.clear
 end
