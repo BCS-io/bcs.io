@@ -1,32 +1,37 @@
 <footer class="footer bg-gray-800">
-    <ul class="footer-nav mt-3 mb-24 text-2xl">
+    <ul class="footer-nav grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 items-center justify-center mt-3 mb-24 text-2xl text-gray-200 no-underline ">
         <li class="footer-nav__item">
-            <%= render_svg "logo-dark-1", styles: 'logo footer-nav__item' %>
+            <%= render_svg "logo-dark-1", styles: 'logo h-24' %>
         </li>
-        <li class="text-gray-200">
-            <%= link_to "https://github.com/BCS-io", class: 'footer-nav__link' do %>
-              <%= render_svg "github", styles: 'logo' %>
+        <li class="text-gray-200 text-center">
+            <%= link_to "https://github.com/BCS-io", class: 'hover:text-white' do %>
+              <div class="c-media">
+                <div class="c-media__figure">
+                  <%= render_svg "github", styles: 'logo h-16' %>
+                </div>
+                <div class="c-media__body">
+                  BCS.io
+                </div>
+              </div>
             <% end %>
         </li>
         <li class="text-gray-200">
             <div class="c-media">
                 <div class="c-media__figure">
-                <%= render_svg "location" %>
+                    <%= render_svg "location", styles: 'h-16' %>
                 </div>
-                <div class="media__body">
-                    <address class="address not-italic whitespace-pre-line">
-                    Business Consolidating Services
-                    Birmingham
+                <div class="c-media__body">
+                    Business Consolidating Services<br>
+                    Birmingham<br>
                     B75 6NR
-                    </address>
                 </div>
             </div>
         </li>
         <li class="text-gray-200">
-            <%= link_to "mailto:hello@bcs.io", class: "footer-nav__link" do %>
+            <%= link_to "mailto:hello@bcs.io", class: "hover:text-white" do %>
                 <div class="c-media">
                     <div class="c-media__figure">
-                        <%= render_svg "envelope" %>
+                        <%= render_svg "envelope", styles: 'h-16' %>
                     </div>
                     <div class="c-media__body">
                         hello@bcs.io

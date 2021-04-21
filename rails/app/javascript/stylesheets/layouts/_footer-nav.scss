@@ -1,24 +1,3 @@
 .footer-nav {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(11.25rem, 1fr));
-    grid-gap: 1.25rem;
-    align-items: center;
-    justify-content: flex-start;
-
-    &__link:link,
-    &__link:visited {
-        color: white;
-        text-decoration: none;
-        text-align: center;
-        display: block;
-        transition: all .2s;
-
-        background-color: rgba($color-grey-dark-2, .05);
-    }
-
-    &__link:hover,
-    &__link:active {
-        background-color: rgba(white, .05);
-        transform: translateY(-3px);
-    }
+  grid-gap: 2rem 3rem;
 }

@@ -2,20 +2,18 @@
 // Media object
 //
 .c-media {
-    align-items: center;
-    display: grid;
+    @apply grid justify-items-center items-center;
     grid-template-areas: "figure body";
-    grid-template-columns: 2.5rem 1fr;
+    grid-template-columns: 5rem 1fr;
     grid-gap: 0 1.25rem;
 
     &__figure {
         grid-area: figure;
-        font-size: 1rem;
+        @apply text-xs;
     }
 
     &__body {
         grid-area: body;
-        font-style: normal;
-        justify-self: flex-start;
+        @apply not-italic justify-self-start;
     }
 }
