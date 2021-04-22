@@ -1,23 +1,23 @@
-<%= form_with model: @contact, url: "/contact", class: 'c-form__wrapper', local: true, validate: true  do |form| %>
-<fieldset class='c-form'>
-  <h4 class='c-form__heading'>Contact form</h4>
+<%= form_with model: @contact, url: "/contact", class: 'w-11/12 md:w-5/6 lg:w-4/6 xl:w-1/2 2xl:w-1/3', local: true, validate: true  do |form| %>
+<fieldset class='flex flex-col border-0 bg-gray-200 text-xl'>
+  <h4 class='text-4xl pl-4 pt-12 border-b-2 border-gray-300'>Contact form</h4>
 
-  <div class="c-form__row">
-    <%= form.label :name, class: 'c-form__label' %>
-    <%= form.text_field :name, class: 'c-form__input', autocorrect: 'off', required: true %>
+  <div class="flex flex-col mt-8 px-4">
+    <%= form.label :name, class: '' %>
+    <%= form.text_field :name, class: 'mt-2', autocorrect: 'off', required: true %>
   </div>
 
-  <div class="c-form__row">
-    <%= form.label :email, class: 'c-form__label' %>
-    <%= form.text_field :email, class: 'c-form__input', autocorrect: 'off', autocapitalize: 'none', required: true %>
+  <div class="flex flex-col mt-8 px-4">
+    <%= form.label :email, class: '' %>
+    <%= form.text_field :email, class: 'mt-2', autocorrect: 'off', autocapitalize: 'none', required: true %>
   </div>
 
-  <div class="c-form__row  c-form__highlight">
-    <%= render_svg "message", styles: 'c-form__image' %>
-    <%= form.label :message, class: 'c-form__label' %>
-    <%= form.text_area :message, class: 'c-form__input c-input-field-multiline', rows: 6 %>
+  <div class="flex flex-col mt-8 px-4 c-form__highlight py-8">
+    <%= render_svg "message", styles: 'w-32 h-14 justify-self-start' %>
+    <%= form.label :message, class: '' %>
+    <%= form.text_area :message, class: 'c-input-field-multiline mt-2', rows: 6 %>
   </div>
 
-  <%= form.submit 'Contact', class: 'c-btn c-btn--secondary c-btn--chrome-flexbox-fieldset-bug-hack' %>
+  <%= form.submit 'Contact', class: 'c-btn c-btn--secondary h-16 w-11/12 rounded self-center justify-self-center mt-8 mb-8' %>
 </fieldset>
 <% end %>

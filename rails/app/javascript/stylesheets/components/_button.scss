@@ -42,19 +42,6 @@
         box-shadow: 0 .3rem .6rem rgba($color-black, .2);
     }
 
-    &--small {
-        width: 9rem;
-    }
-
-    &--medium {
-        padding: .9rem .6rem;
-        width: 15rem;
-    }
-
-    &--large {
-        width: 22rem;
-    }
-
     &--primary {
         background-color: $color-primary;
         color: $color-white;
