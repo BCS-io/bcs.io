@@ -4,7 +4,7 @@
 # push subtree to repo
 #
 
-branch=master
+branch=main
 code_path=rails
 platform=dokku
 environment=staging
