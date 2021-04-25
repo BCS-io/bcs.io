@@ -5,5 +5,15 @@
 #    - different custom urls
 #
 class WorksController < ApplicationController
-  def lettings; end
+  before_action :set_breadcrumbs
+  def lettings
+    add_breadcrumb(name: "Lettings")
+  end
+
+  private
+
+  def set_breadcrumbs
+    add_breadcrumb(name: "Home", path: root_path)
+    add_breadcrumb(name: "Work", path: work_pages_path)
+  end
 end

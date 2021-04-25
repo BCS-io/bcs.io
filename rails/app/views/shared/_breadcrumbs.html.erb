@@ -1,0 +1,19 @@
+<nav class="mt-6">
+  <ol class="flex list-none text-gray-400">
+    <% breadcrumbs.each do |crumb| %>
+     <li>
+      <% if crumb.link? %>
+        <%= link_to crumb.name, crumb.path %>
+      <% else %>
+        <span>
+          <%= crumb.name %>
+        </span>
+      <% end %>
+
+      <% unless crumb == breadcrumbs.last %>
+        <span>&nbsp;&raquo;&nbsp;</span>
+      <% end %>
+     </li>
+    <% end %>
+  </ol>
+</nav>
