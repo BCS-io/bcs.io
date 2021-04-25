@@ -23,13 +23,3 @@ h3 {
         }
     }
 }
-
-.paragraph {
-    font-size: 1.24rem;
-    @include line-height(1.5);
-    @include margin-bottom(1);
-
-    @include respond(tablet-landscape) {
-        font-size: 1.1rem;
-    }
-}

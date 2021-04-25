@@ -1,19 +1,33 @@
 <%= content_for :title, "About | BCS.io" %>
 
 <div class="about">
-  <div class="main">
+  <div class="main text-xl max-w-2xl">
     <h1 class="heading-primary heading-primary--title">About</h1>
 
-    <p class="paragraph">BCS Limited is a Birmingham software company that develops systems for businesses and specialises in the agile evolution of websites.</p>
-    <p class="paragraph">We will work with you to get your ideas off the ground and flying.</p>
-    <p class="paragraph">We keep listening and we keep refining until you're satisfied.</p>
+    <p class="mt-6">
+      We are custom software developers, based in Birmingham using Open Software or Microsoft. Our team enjoys a challenge so tell us about your needs, however large or small.
+    </p>
+
+    <p class="mt-6">
+      We keep listening and we keep refining until you're satisfied. We will work with you to get your ideas off the ground and flying.
+    </p>
+    <p class="mt-6">
+      Open Source and Microsoft Software has been developed in a wide range of applications: E-commerce, accounting, retail, gardening and sports.
+    </p>
+    <p class="mt-6">
+      Our team can manipulate and process multiple data sources in PostgresSQL, MySQl, SQL server, JSON API's, Excel spreadsheets or CSV to integrate smoothly into new software.
+    </p>
+
+    <p class="mt-6">
+      Our aim is to provide the best possible software experience for our clients. We deliver a well integrated system with robust testing and comprehensive training and support. So speak to us soon.
+    </p>
   </div>
 
-  <div class="action">
-    <%= link_to "Hire Us", root_path(anchor: "contact-us"), class: "c-btn c-btn--medium c-btn--action" %>
+  <div class="action mt-8">
+    <%= link_to "Hire Us", root_path(anchor: "contact-us"), class: "c-btn c-btn--medium c-btn--action px-10 py-6 rounded" %>
   </div>
 
   <div class="skyline">
-    <%= render_svg "city-skyline" %>
+    <%= render_svg "city-skyline", styles: 'block' %>
   </div>
 </div>

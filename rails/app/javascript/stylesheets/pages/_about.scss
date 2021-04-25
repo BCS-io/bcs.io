@@ -18,8 +18,6 @@
 
 .main {
   grid-area: main;
-  max-width: 37.5rem;
-  @include margin-bottom(2);
 }
 
 .action {
