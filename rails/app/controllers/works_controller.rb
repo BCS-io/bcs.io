@@ -10,6 +10,10 @@ class WorksController < ApplicationController
     add_breadcrumb(name: "Lettings")
   end
 
+  def schedule_gardener
+    add_breadcrumb(name: "Schedule Gardener")
+  end
+
   private
 
   def set_breadcrumbs

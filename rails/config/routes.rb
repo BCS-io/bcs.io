@@ -13,5 +13,6 @@ Rails.application.routes.draw do
 
   resource :works do
     get :lettings
+    get :schedule_gardener
   end
 end
