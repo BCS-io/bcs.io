@@ -9,20 +9,20 @@
 We will collaborate closely throughout all stages of the project:  in design, implementation, testing, training and support.</div>
     </main>
 
-    <section class="grid grid-cols-1 md:grid-cols-2 grid-rows-2 mt-4">
-      <figure class="p-2 bg-yellow-300 border-4 border-yellow-500 rounded">
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-x-2 gap-y-2 grid-rows-2 my-4">
+      <figure class="bg-yellow-300 border-4 border-yellow-500 rounded">
         <%= link_to lettings_works_path, class: 'no-underline' do
           render_svg "adams-logo", styles: 'h-full w-full block test_letting '
         end %>
       </figure>
 
-      <figure class="mt-2 md:mt-0 md:ml-2 p-2 bg-red-300 border-4 border-red-500 rounded">
+      <figure class="bg-red-300 border-4 border-red-500 rounded">
         <%= link_to "https://github.com/BCS-io/bcs.io" do
           render_svg "work/bcs_io/cover", styles: 'h-full w-full block test_bcs_io', title: 'BCS.io'
         end %>
       </figure>
 
-      <figure class="p-2 bg-green-300 border-4 border-green-500 rounded">
+      <figure class="bg-green-300 border-4 border-green-500 rounded">
         <%= link_to schedule_gardener_works_path, class: 'no-underline' do
           render_svg "works/schedule_gardener/leaf", styles: 'h-full w-full block test_leaf'
         end %>
