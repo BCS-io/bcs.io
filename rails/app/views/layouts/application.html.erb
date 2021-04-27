@@ -17,12 +17,12 @@
     <meta name="theme-color" content="#FCC133">
   </head>
 
-  <body class="application flex flex-col">
+  <body class="application h-screen flex flex-col">
     <%= render 'layouts/flashes' %>
     <div class="wrapper">
       <%= render 'layouts/main-header' %>
     </div>
-    <div class="wrapper">
+    <div class="wrapper flex-grow">
       <%= yield %>
     </div>
     <div class="bg-gray-800">
