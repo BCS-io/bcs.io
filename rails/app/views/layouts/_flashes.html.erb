@@ -1,6 +1,6 @@
 <% flash.each do |state, message| %>
-<div class="flash__message"">
-    <div class=" flash__text notice"><%= flash[:notice] %></div>
-<div class="flash__icon"><%= render_svg "mini-ballon" %></div>
+<div class="flash__message">
+    <div class="flash__text notice"><%= flash[:notice] %></div>
+    <div class="flash__icon"><%= render_svg "mini-ballon" %></div>
 </div>
 <% end %>
