@@ -1,7 +1,7 @@
 # Provider of the resource
 provider "hcloud" {
   token =  var.hcloud_token
-  version = "~> 1.15"
+  version = "~> 1.26"
 }
 
 # Resource required

@@ -5,7 +5,7 @@ operator_fingerprint = "ab:cd:5c" # etc
 
 server = {
     # ubuntu-18.04 / debian-9 / snapshot id
-    image       = "ubuntu-18.04"
+    image       = "ubuntu-20.04"
 
     # nbg1, fsn1 or hel1
     location    = "fsn1"
