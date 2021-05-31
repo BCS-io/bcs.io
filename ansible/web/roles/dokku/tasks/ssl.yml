@@ -6,16 +6,16 @@
       - name: letsencrypt
         url: https://github.com/dokku/dokku-letsencrypt.git
 
-- name: config:set  {{ application }} DOKKU_LETSENCRYPT_EMAIL=${DOKKU_LETSENCRYPT_EMAIL}
+- name: config:set  {{ dokku.application }} DOKKU_LETSENCRYPT_EMAIL=${DOKKU_LETSENCRYPT_EMAIL}
   dokku_config:
-    app: "{{ application }}"
+    app: "{{ dokku.application }}"
     config:
-      DOKKU_LETSENCRYPT_EMAIL: "{{ ops_email }}"
+      DOKKU_LETSENCRYPT_EMAIL: "{{ dokku.ops_email }}"
   tags:
     - dokku
     - ssl
 
-- name: website live {{ application }}
+- name: website live {{ dokku.application }}
   uri:
     url: "http://{{ domain }}"
   ignore_errors: yes
@@ -35,8 +35,8 @@
 #  "msg": "Status code was -1 and not [200]: Connection failure: Remote end closed connection without response",
 #  "status": -1,
 #
-- name: letsencrypt {{ application }}
-  command: dokku letsencrypt:auto-renew {{ application }}
+- name: letsencrypt {{ dokku.application }}
+  command: dokku letsencrypt:auto-renew {{ dokku.application }}
   when:
     - "'encrypt' in group_names"
     - http_response.status == 200 or (http_response.status == -1 and http_response.msg is search("CERTIFICATE_VERIFY_FAILED"))

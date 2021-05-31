@@ -8,16 +8,16 @@
         username: richard
         ssh_key: "{{ lookup('file', controller_key) }}"
 
-- name: apps:create {{ application }}
+- name: apps:create {{ dokku.application }}
   dokku_app:
-    app: "{{ application }}"
+    app: "{{ dokku.application }}"
     state: present
   tags:
     - dokku
 
-- name: domains:add {{ application }} {{ domain }}
+- name: domains:add {{ dokku.application }} {{ domain }}
   dokku_domains:
-    app: "{{ application }}"
+    app: "{{ dokku.application }}"
     domains:
       - "{{ domain }}"
     state: present

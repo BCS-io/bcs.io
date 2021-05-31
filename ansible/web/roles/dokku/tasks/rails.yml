@@ -4,9 +4,9 @@
 
 # Rails specific configuration
 #
-- name: config:set {{ application }} RAILS_ENV= {{ rails_env }} RAILS_MASTER_KEY=XXXX RAILS_SERVE_STATIC_FILES=true
+- name: config:set {{ dokku.application }} RAILS_ENV= {{ rails_env }} RAILS_MASTER_KEY=XXXX RAILS_SERVE_STATIC_FILES=true
   dokku_config:
-    app: "{{ application }}"
+    app: "{{ dokku.application }}"
     config:
       RAILS_ENV: "{{ rails_env }}"
       RAILS_MASTER_KEY: "{{ lookup('file', rails_master_key )}}"
@@ -21,9 +21,9 @@
     - master.key
     - env
 
-- name: config:set {{ application }} banner mark
+- name: config:set {{ dokku.application }} banner mark
   dokku_config:
-    app: "{{ application }}"
+    app: "{{ dokku.application }}"
     config:
       RACK_DEV_MARK_ENV: "{{ rack_dev_mark_env }}"
   # when: rack_dev_mark_env is defined
@@ -31,8 +31,8 @@
     - dokku
     - env
 
-- name: config {{ application }}
-  command: dokku config "{{ application }}"
+- name: config {{ dokku.application }}
+  command: dokku config "{{ dokku.application }}"
   register: debug_dokku_config
   tags:
     - never

@@ -5,8 +5,9 @@ ansible_python_interpreter: /usr/bin/python3
 controller_key: '~/.ssh/id_rsa.pub'
 
 # Dokku Specific
-application: bcs-io
-ops_email: ops@bcs.io
+dokku:
+  application: bcs-io
+  ops_email: ops@bcs.io
 
 
 # banner message
