@@ -46,6 +46,15 @@
 - import_tasks: unattended-upgrades.yml
 - import_tasks: upgrade.yml
 
+#
+# It hung on reboot one time.
+#  - tried reboot_timeout didn't work
+#    - it rebooted but Ansible didn't continue playbook
+#  - installed again and it worked.
+#  - after setting reboot_timeout and waiting I got this:
+#  TASK [base : Unconditionally reboot the machine with all defaults] *****************************************************
+#  fatal: [oxna.bcs.io]: FAILED! => {"changed": false, "elapsed": 3602, "msg": "Timed out waiting for last boot time check (timeout=3600)", "rebooted": true}
+#
 # precaution before running the rest
 # - only real issue is with CRON and possibly locale change
 - name: Unconditionally reboot the machine with all defaults
