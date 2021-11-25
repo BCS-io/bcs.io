@@ -47,6 +47,7 @@ Terraform configuration is specific for a single cloud provider. Only would be r
 
 Which gives:
 ```
+bin/clean -p
 bin/run -p -a
 # Update DNS if ip addresses have changed
 bin/ansible-playbook -p
